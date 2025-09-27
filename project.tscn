@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://xttvpld43ld0"]
+[gd_scene load_steps=31 format=3 uid="uid://xttvpld43ld0"]
 
 [ext_resource type="Script" uid="uid://dsrg4dqqt5s16" path="res://addons/road-generator/nodes/road_manager.gd" id="1_tou82"]
 [ext_resource type="Material" uid="uid://crcbes52fp3eu" path="res://AmbientCG/Downloads/Snow0121K-JPG/Snow012.material" id="2_45u5h"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://brjwpgcmopu0f" path="res://addons/proton_scatter/src/scatter_item.gd" id="10_xpnhj"]
 [ext_resource type="Script" uid="uid://d1th6b1yru48n" path="res://addons/proton_scatter/src/scatter_shape.gd" id="11_v4wlu"]
 [ext_resource type="Script" uid="uid://crq80waf2d1kc" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="12_15olg"]
+[ext_resource type="PackedScene" uid="uid://cm88s6uhf8bbj" path="res://modele_3d/casa_joc3.fbx" id="17_r6vht"]
 
 [sub_resource type="Resource" id="Resource_fjiqs"]
 script = ExtResource("6_8prmg")
@@ -139,58 +140,59 @@ fog_light_color = Color(0.616379, 0.649052, 0.700388, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0678575, -0.00886095, 0.0206747)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.427, 0.376737, -118.761)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.427, -0.208384, -118.761)
 use_collision = true
 size = Vector3(222.741, 0.001, 198.005)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88685, 1.15809, -35.4257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88685, 0.805121, -36.2652)
 use_collision = true
-size = Vector3(3.12881, 1.32477, 0.101105)
+size = Vector3(3.12881, 2.03071, 0.101105)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88315, 1.1678, -33.4041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88315, 0.805537, -32.6466)
 use_collision = true
-size = Vector3(3.13015, 1.30545, 0.0784378)
+size = Vector3(3.13015, 2.02998, 0.0784378)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32957, 1.1576, -34.4157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32957, 0.798605, -34.445)
 use_collision = true
-size = Vector3(0.0295296, 1.32867, 2.10135)
+size = Vector3(0.0295296, 2.04666, 3.60346)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4111, 1.1576, -34.4107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4088, 0.787672, -34.4472)
 use_collision = true
-size = Vector3(0.129999, 1.32867, 2.10135)
+size = Vector3(0.129999, 1.99881, 3.61909)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141747, -0.00702822, -0.0973206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141747, -0.174664, -0.00188828)
 operation = 2
-size = Vector3(1, 1.69105, 0.369232)
+size = Vector3(1, 1.35578, 0.982028)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89572, 1.773, -34.4195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89572, 1.773, -34.675)
 use_collision = true
-size = Vector3(3.16011, 0.0953522, 2.10614)
+size = Vector3(3.16011, 0.0953522, 3.96202)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8469, 1.90412, -34.4813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.145, 1.45286, -34.4813)
 use_collision = true
-height = 2.76234
+radius = 1.04346
+height = 3.66486
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.614532, -1.20383, -0.0262756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.614532, -0.952185, 0.0213089)
 operation = 2
-size = Vector3(0.980713, 0.532557, 0.389526)
+size = Vector3(0.980713, 1.44368, 0.933071)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125488, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24292, 0)
 operation = 2
-radius = 0.437012
-height = 3.01465
+radius = 0.824707
+height = 4.71924
 
 [node name="Character_V3" parent="." instance=ExtResource("2_udjck")]
-transform = Transform3D(-0.0101185, 0, -0.199744, 0, 0.2, 0, 0.199744, 0, -0.0101185, -8.52289, 0.386284, -34.5645)
+transform = Transform3D(-0.0354147, 0, -0.699104, 0, 0.7, 0, 0.699104, 0, -0.0354147, -9.89361, -0.15499, -34.3473)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.494, 2.79223, -118.822)
@@ -199,8 +201,9 @@ use_collision = true
 size = Vector3(222.8, 1, 198.039)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.654, -2.20218, 84.3384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.345, -2.20218, 84.3384)
 operation = 2
+radius = 1.06055
 height = 6.46191
 
 [node name="ProtonScatter" type="Node3D" parent="CSGBox3D7"]
@@ -319,3 +322,9 @@ next_pt_init = NodePath("../RP_001")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2ycvt")
+
+[node name="casa_joc3" parent="." instance=ExtResource("17_r6vht")]
+transform = Transform3D(-0.699302, 0, -0.714827, 0, 1, 0, 0.714827, 0, -0.699302, -193.544, 2.7603, -178.277)
+
+[node name="casa_joc4" parent="." instance=ExtResource("17_r6vht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11321, 2.82354, -26.6986)
