@@ -1,0 +1,321 @@
+[gd_scene load_steps=30 format=3 uid="uid://xttvpld43ld0"]
+
+[ext_resource type="Script" uid="uid://dsrg4dqqt5s16" path="res://addons/road-generator/nodes/road_manager.gd" id="1_tou82"]
+[ext_resource type="Material" uid="uid://crcbes52fp3eu" path="res://AmbientCG/Downloads/Snow0121K-JPG/Snow012.material" id="2_45u5h"]
+[ext_resource type="PackedScene" uid="uid://k38t255mjcxn" path="res://gigel/Character_V3.FBX" id="2_udjck"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="3_3jgss"]
+[ext_resource type="Script" uid="uid://cl53ki5uwqh4o" path="res://addons/proton_scatter/src/scatter.gd" id="3_r6vht"]
+[ext_resource type="Script" uid="uid://dbyvybly2iu36" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="4_gh2o7"]
+[ext_resource type="Script" uid="uid://cu31wibvpipjt" path="res://addons/road-generator/nodes/road_container.gd" id="4_vsyxl"]
+[ext_resource type="Script" uid="uid://ntgd4wwfnyge" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="5_8a4hf"]
+[ext_resource type="Script" uid="uid://b8pnxuotne0hp" path="res://addons/road-generator/nodes/road_point.gd" id="5_ld1nf"]
+[ext_resource type="Script" uid="uid://dr04sg0rag7en" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="6_8prmg"]
+[ext_resource type="Script" uid="uid://djs5ilfa35yr6" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="7_7kjis"]
+[ext_resource type="Script" uid="uid://o7rc5wbmx5uy" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="8_v3672"]
+[ext_resource type="Script" uid="uid://mpi8bo7k3wbr" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="9_vq2no"]
+[ext_resource type="Script" uid="uid://brjwpgcmopu0f" path="res://addons/proton_scatter/src/scatter_item.gd" id="10_xpnhj"]
+[ext_resource type="Script" uid="uid://d1th6b1yru48n" path="res://addons/proton_scatter/src/scatter_shape.gd" id="11_v4wlu"]
+[ext_resource type="Script" uid="uid://crq80waf2d1kc" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="12_15olg"]
+
+[sub_resource type="Resource" id="Resource_fjiqs"]
+script = ExtResource("6_8prmg")
+amount = 150
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_hteap"]
+script = ExtResource("7_7kjis")
+position = Vector3(45, 0, 40)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(2, 0.1, 1)
+enabled = true
+override_global_seed = true
+custom_seed = 7
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_0jiqq"]
+script = ExtResource("8_v3672")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_2sw4n"]
+script = ExtResource("9_vq2no")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_6bcix"]
+script = ExtResource("4_gh2o7")
+stack = Array[ExtResource("5_8a4hf")]([SubResource("Resource_fjiqs"), SubResource("Resource_hteap"), SubResource("Resource_0jiqq"), SubResource("Resource_2sw4n")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("12_15olg")
+radius = 2.0
+
+[sub_resource type="Resource" id="Resource_bpmma"]
+script = ExtResource("6_8prmg")
+amount = 100
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_3c112"]
+script = ExtResource("7_7kjis")
+position = Vector3(45, 0.15, 40)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(1, 1, 1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_2tufx"]
+script = ExtResource("8_v3672")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_t6me2"]
+script = ExtResource("9_vq2no")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_5jfff"]
+script = ExtResource("4_gh2o7")
+stack = Array[ExtResource("5_8a4hf")]([SubResource("Resource_bpmma"), SubResource("Resource_3c112"), SubResource("Resource_2tufx"), SubResource("Resource_t6me2")])
+
+[sub_resource type="Resource" id="Resource_p26k5"]
+script = ExtResource("12_15olg")
+radius = 2.0
+
+[sub_resource type="Environment" id="Environment_2ycvt"]
+background_mode = 1
+background_color = Color(0.226707, 0.226707, 0.226707, 1)
+fog_enabled = true
+fog_light_color = Color(0.616379, 0.649052, 0.700388, 1)
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0678575, -0.00886095, 0.0206747)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.427, 0.376737, -118.761)
+use_collision = true
+size = Vector3(222.741, 0.001, 198.005)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88685, 1.15809, -35.4257)
+use_collision = true
+size = Vector3(3.12881, 1.32477, 0.101105)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88315, 1.1678, -33.4041)
+use_collision = true
+size = Vector3(3.13015, 1.30545, 0.0784378)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32957, 1.1576, -34.4157)
+use_collision = true
+size = Vector3(0.0295296, 1.32867, 2.10135)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4111, 1.1576, -34.4107)
+use_collision = true
+size = Vector3(0.129999, 1.32867, 2.10135)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141747, -0.00702822, -0.0973206)
+operation = 2
+size = Vector3(1, 1.69105, 0.369232)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89572, 1.773, -34.4195)
+use_collision = true
+size = Vector3(3.16011, 0.0953522, 2.10614)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8469, 1.90412, -34.4813)
+use_collision = true
+height = 2.76234
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.614532, -1.20383, -0.0262756)
+operation = 2
+size = Vector3(0.980713, 0.532557, 0.389526)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125488, 0)
+operation = 2
+radius = 0.437012
+height = 3.01465
+
+[node name="Character_V3" parent="." instance=ExtResource("2_udjck")]
+transform = Transform3D(-0.0101185, 0, -0.199744, 0, 0.2, 0, 0.199744, 0, -0.0101185, -8.52289, 0.386284, -34.5645)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.494, 2.79223, -118.822)
+material_override = ExtResource("2_45u5h")
+use_collision = true
+size = Vector3(222.8, 1, 198.039)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.654, -2.20218, 84.3384)
+operation = 2
+height = 6.46191
+
+[node name="ProtonScatter" type="Node3D" parent="CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4258, 0, 54.2333)
+script = ExtResource("3_r6vht")
+modifier_stack = SubResource("Resource_6bcix")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cl53ki5uwqh4o"
+
+[node name="ScatterItem" type="Node3D" parent="CSGBox3D7/ProtonScatter"]
+script = ExtResource("10_xpnhj")
+path = "uid://caqxfqurbp3ku"
+
+[node name="ScatterShape" type="Node3D" parent="CSGBox3D7/ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("11_v4wlu")
+shape = SubResource("Resource_g8bsm")
+
+[node name="ProtonScatter2" type="Node3D" parent="CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.8687, 1.90735e-06, 58.5648)
+script = ExtResource("3_r6vht")
+modifier_stack = SubResource("Resource_5jfff")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cl53ki5uwqh4o"
+
+[node name="ScatterItem" type="Node3D" parent="CSGBox3D7/ProtonScatter2"]
+script = ExtResource("10_xpnhj")
+path = "uid://caqxfqurbp3ku"
+
+[node name="ScatterShape" type="Node3D" parent="CSGBox3D7/ProtonScatter2"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("11_v4wlu")
+shape = SubResource("Resource_p26k5")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0661922, 1.8432, -118.733)
+use_collision = true
+size = Vector3(0.0295296, 2.89931, 198.058)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.473, 1.8432, -217.762)
+use_collision = true
+size = Vector3(222.816, 2.89931, 0.001)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.674, 1.78995, -118.764)
+use_collision = true
+size = Vector3(0.0295296, 2.77269, 198.028)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.473, 1.8432, -19.8103)
+use_collision = true
+size = Vector3(222.816, 2.89931, 0.001)
+
+[node name="RoadManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.43966)
+script = ExtResource("1_tou82")
+material_resource = ExtResource("3_3jgss")
+metadata/_custom_type_script = "uid://dsrg4dqqt5s16"
+
+[node name="Road_001" type="Node3D" parent="RoadManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00490379, -0.0436516, -0.0290833)
+script = ExtResource("4_vsyxl")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002")])
+edge_rp_local_dirs = Array[int]([0, 1])
+
+[node name="RP_001" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.999129, 5.34317e-05, -0.041721, 0, 0.999999, 0.00128069, 0.041721, -0.00127957, 0.999128, -116.177, 3.58588, -19.6688)
+script = ExtResource("5_ld1nf")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+next_mag = 97.6037
+prior_pt_init = NodePath("../RP_002")
+
+[node name="RP_002" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.999129, 0.000108268, -0.0417209, 0, 0.999997, 0.00259504, 0.0417211, -0.00259278, 0.999126, -108.033, 3.58588, -214.706)
+script = ExtResource("5_ld1nf")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 97.6037
+next_mag = 97.6037
+next_pt_init = NodePath("../RP_001")
+
+[node name="RoadContainer" type="Node3D" parent="RoadManager"]
+script = ExtResource("4_vsyxl")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002")])
+edge_rp_local_dirs = Array[int]([0, 1])
+metadata/_custom_type_script = "uid://cu31wibvpipjt"
+
+[node name="RP_001" type="Node3D" parent="RoadManager/RoadContainer"]
+transform = Transform3D(-0.0804754, -0.00114004, 0.996756, 0, 0.999999, 0.00114375, -0.996757, 9.2044e-05, -0.0804753, -1.86479, 3.54224, -127.269)
+script = ExtResource("5_ld1nf")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+next_mag = 109.289
+prior_pt_init = NodePath("../RP_002")
+
+[node name="RP_002" type="Node3D" parent="RoadManager/RoadContainer"]
+transform = Transform3D(-0.0804754, -0.00230677, 0.996754, 0, 0.999997, 0.00231428, -0.996757, 0.000186242, -0.0804752, -219.734, 3.54224, -109.679)
+script = ExtResource("5_ld1nf")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 109.289
+next_mag = 109.289
+next_pt_init = NodePath("../RP_001")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2ycvt")
